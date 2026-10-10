@@ -5,12 +5,20 @@ REST API sederhana untuk **pencatatan peminjaman buku perpustakaan**. Dibangun d
 ## Deskripsi & Tujuan
 API ini membantu petugas perpustakaan mencatat siapa meminjam buku apa, kapan jatuh tempo, dan kapan dikembalikan. Mendukung operasi CRUD serta filter query (mis. `GET /loans?status=Terlambat`). Tugas Responsi Praktikum PPB 2026.
 
+## 👥 Anggota Kelompok
+| No | Nama |
+|---|---|
+| 1 | Amanda Lalita |
+| 2 | Rosita Dwi |
+| 3 | Fina Aprilia |
+| 4 | Radhine Muhammad |
+
 ## Teknologi
 Node.js (>= 18) · Express.js · Supabase · Vercel
 
 ## 🔗 Link
-- **Base URL (Vercel):** `https://GANTI-DENGAN-URL-VERCEL-KAMU.vercel.app`
-- **Repository:** `https://github.com/GANTI-USERNAME/library-loan-api`
+- **Base URL (Vercel):** `https://library-loan-api-delta.vercel.app`
+- **Repository:** `https://github.com/mndlitaa/library-loan-api`
 
 ## Struktur Data (tabel `loans`)
 | Kolom | Tipe | Keterangan |
@@ -100,7 +108,7 @@ Response: `tanggal_kembali` otomatis terisi tanggal hari ini.
 ```
 
 ## Instalasi & Menjalankan Lokal
-1. Clone repo: `git clone https://github.com/GANTI-USERNAME/library-loan-api.git && cd library-loan-api`
+1. Clone repo: `git clone https://github.com/mndlitaa/library-loan-api.git && cd library-loan-api`
 2. Install dependency: `npm install`
 3. Buat project Supabase, lalu jalankan `docs/schema.sql` di **SQL Editor**.
 4. Salin `.env.example` menjadi `.env`, isi `SUPABASE_URL` dan `SUPABASE_KEY` (Project Settings → API).
