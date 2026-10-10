@@ -1,0 +1,54 @@
+{
+  "info": {
+    "name": "Library Loan API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "http://localhost:3000" }],
+  "item": [
+    { "name": "Root", "request": { "method": "GET", "url": "{{baseUrl}}/" } },
+    { "name": "GET semua peminjaman", "request": { "method": "GET", "url": "{{baseUrl}}/loans" } },
+    {
+      "name": "GET filter status=Terlambat",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/loans?status=Terlambat", "host": ["{{baseUrl}}"], "path": ["loans"], "query": [{ "key": "status", "value": "Terlambat" }] }
+      }
+    },
+    {
+      "name": "GET filter nama_anggota",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/loans?nama_anggota=budi", "host": ["{{baseUrl}}"], "path": ["loans"], "query": [{ "key": "nama_anggota", "value": "budi" }] }
+      }
+    },
+    { "name": "GET detail by id", "request": { "method": "GET", "url": "{{baseUrl}}/loans/1" } },
+    {
+      "name": "POST tambah peminjaman",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"nama_anggota\": \"Rina Putri\",\n  \"judul_buku\": \"Filosofi Teras\",\n  \"tanggal_pinjam\": \"2026-10-10\",\n  \"tanggal_jatuh_tempo\": \"2026-10-17\"\n}" },
+        "url": "{{baseUrl}}/loans"
+      }
+    },
+    {
+      "name": "PUT kembalikan buku",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"status\": \"Dikembalikan\"\n}" },
+        "url": "{{baseUrl}}/loans/1"
+      }
+    },
+    { "name": "DELETE hapus peminjaman", "request": { "method": "DELETE", "url": "{{baseUrl}}/loans/1" } },
+    {
+      "name": "POST validasi gagal (contoh error)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"nama_anggota\": \"Tanpa Judul\"\n}" },
+        "url": "{{baseUrl}}/loans"
+      }
+    }
+  ]
+}
